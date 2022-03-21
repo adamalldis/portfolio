@@ -14,18 +14,10 @@
 .name-grid {
     position: relative;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    justify-content: center;
     align-items: center;
-    margin-top: 4rem;
-}
-
-.square {
-    width: 4rem;
-    height: 4rem;
-    background-color: var(--color-main);
-    border-radius: 3px;
-    margin-right: 0.25rem;
-    margin-left: 4rem;
+    height: 100vh;
 }
 
 .my-name-container {
@@ -40,6 +32,17 @@
     padding: 0 4px 10px 4px;
 }
 
+.my-name-container::before {
+    content: "";
+    top: 0;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-main);
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-right: 6px;
+}
+
 .bullet {
     width: .8rem;
     height: .8rem;
@@ -48,11 +51,10 @@
 }
 
 .my-title {
-    position: absolute;
-    bottom: 0.1rem;
-    left: 8.6rem;
     font-size: 0.85rem;
     color: #777;
+    margin-left: 44px;
+    margin-top: -20px;
 }
 
 h1 {
