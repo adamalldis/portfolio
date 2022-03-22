@@ -63,17 +63,15 @@ body {
     list-style-type: none;
 }
 
-a, a:visited {
-    padding: 0 15px;
+li {
+    padding: 10px 15px;
     color: #FFF;
     text-decoration: none;
 }
 
-a:hover, a:active {
+li:hover {
     padding: 10px 15px;
     color: var(--color-main);
-    border-bottom: 2px dotted #FFF;
-    border-top: 2px dotted #FFF;
 }
 
 /* ================================== HERO NAME SECTION =========== */
@@ -94,6 +92,7 @@ a:hover, a:active {
 }
 
 .my-name {
+    color: #111;
     font-size: 6rem;
     font-weight: 800;
     padding: 0 8px 20px 8px;
@@ -170,6 +169,18 @@ h3 {
     padding-right: 20px;
 }
 
+/* ================================== SKILLS SECTION =========== */
+
+.skills-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-main);
+    color: #FFF;
+    height: 400px;
+}
+
 /* ================================== PROJECTS SECTION =========== */
 
 .projects-container {
@@ -177,8 +188,8 @@ h3 {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-main);
-    color: #FFF;
+    background-color: #FFF;
+    color: #111;
     height: 400px;
 }
 
@@ -190,8 +201,8 @@ h3 {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #FFF;
-    color: #111;
+    background-color: #111;
+    color: #FFF;
     height: 4rem;
 }
 
