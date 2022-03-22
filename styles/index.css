@@ -11,10 +11,77 @@
     font-family: 'Roboto Slab', serif;
 }
 
+body {
+    background-color: #777;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 100vw;
+    background-color: #FFF;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================== NAVIGATION SECTION =========== */
+
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #111;
+    color: #FFF;
+    height: 4rem;
+    position: fixed;
+    width: 900px;
+    z-index: 1;
+}
+
+.logo-box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--color-main);
+    color: #FFF;
+    border-radius: 2px;
+    margin: 5px;
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+}
+
+.menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style-type: none;
+}
+
+a, a:visited {
+    padding: 0 15px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    padding: 10px 15px;
+    color: var(--color-main);
+    border-bottom: 2px dotted #FFF;
+    border-top: 2px dotted #FFF;
+}
+
+/* ================================== HERO NAME SECTION =========== */
+
 .name-grid {
     position: relative;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -27,34 +94,35 @@
 }
 
 .my-name {
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: 800;
-    padding: 0 4px 10px 4px;
+    padding: 0 8px 20px 8px;
 }
 
 .my-name-container::before {
     content: "";
     top: 0;
-    width: 4rem;
-    height: 4rem;
+    width: 8rem;
+    height: 8rem;
     background-color: var(--color-main);
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-right: 6px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 12px;
 }
 
 .bullet {
-    width: .8rem;
-    height: .8rem;
+    width: 1.6rem;
+    height: 1.6rem;
     background-color: var(--color-main);
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
 }
 
 .my-title {
-    font-size: 0.85rem;
+    font-size: 1.7rem;
     color: #777;
-    margin-left: 44px;
-    margin-top: -20px;
+    margin-left: 88px;
+    margin-top: -40px;
+    font-weight: 300;
 }
 
 h1 {
@@ -64,4 +132,152 @@ h1 {
 h3 {
     font-weight: 400;
     color: #777;
+}
+
+/* ================================== ABOUT ME SECTION =========== */
+
+.about-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    color: #FFF;
+    height: 500px;
+}
+
+.profile-pic {
+    width: 16rem;
+    height: 16rem;
+    border-radius: 8rem;
+    border: solid 10px var(--color-main);
+    margin: 40px;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FFF;
+    line-height: 3rem;
+    padding-bottom: 10px;
+}
+
+.about-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.5rem;
+    padding-right: 20px;
+}
+
+/* ================================== PROJECTS SECTION =========== */
+
+.projects-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-main);
+    color: #FFF;
+    height: 400px;
+}
+
+/* ================================== FOOTER SECTION =========== */
+
+.footer-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #FFF;
+    color: #111;
+    height: 4rem;
+}
+
+.footer-info {
+    padding: 0 20px;
+}
+
+/* ================================== MEDIA QUERY =========== */
+
+@media only screen and (max-width: 780px) {
+
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+        width: 100vw;
+        background-color: #FFF;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #111;
+        color: #FFF;
+        height: 4rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .my-name {
+        font-size: 3rem;
+        font-weight: 800;
+        padding: 0 4px 10px 4px;
+    }
+
+    .my-title {
+        font-size: .85rem;
+        color: #777;
+        margin-left: 44px;
+        margin-top: -20px;
+        font-weight: 400;
+    }
+
+    .about-container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #111;
+        color: #FFF;
+        height: 700px;
+        text-align: center;
+    }
+
+    .my-name-container::before {
+        content: "";
+        top: 0;
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--color-main);
+        border-radius: 3px;
+        margin-top: 10px;
+        margin-right: 6px;
+    }
+    
+    .bullet {
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: var(--color-main);
+        border-radius: 0.4rem;
+    }
+    
+    .about-text {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #777;
+        line-height: 1.5rem;
+        padding: 0 20px;
+    }
+
+
 }
