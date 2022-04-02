@@ -49,8 +49,8 @@ function setNumbers() {
       accoladesEl.textContent = "TRY AGAIN";
     }
   } else {
-    num1El.value = Math.floor(Math.random() * 10);
-    num2El.value = Math.floor(Math.random() * 10);
+    num1El.value = Math.floor(Math.random() * 13);
+    num2El.value = Math.floor(Math.random() * 13);
     answerEl.value = null;
   }
 }
@@ -63,7 +63,7 @@ enterEl.addEventListener("click", function() {
   if (answerEl.value === "") {
     modalNoAnswer.classList.add("modal-visible");
   } else {
-    if (Number(answerEl.value) === Number(num1El.value) + Number(num2El.value) && gameOver === false) {
+    if (Number(answerEl.value) === Number(num1El.value) * Number(num2El.value) && gameOver === false) {
       modalCorrect.classList.add("modal-visible");
     } else if (guesses > 0) {
       modalIncorrect.classList.add("modal-visible");
@@ -94,22 +94,22 @@ scoreCorrectEl = document.querySelector("#score-correct"),
 scoreIncorrectEl = document.querySelector("#score-incorrect"),
 scoreRemainingEl = document.querySelector("#score-remaining");
 
-scoreCorrectEl.textContent = "CORRECT: " + scoreCorrectNum;
-scoreIncorrectEl.textContent = "INCORRECT: " + scoreIncorrectNum;
-scoreRemainingEl.textContent = "QUESTION: " + scoreRemainingNum + " / 10";
+scoreCorrectEl.textContent = scoreCorrectNum;
+scoreIncorrectEl.textContent = scoreIncorrectNum;
+scoreRemainingEl.textContent = scoreRemainingNum;
 
 
 // updates the question counter
 function updateStats() {
-    if (scoreRemainingNum < 10) {
+    if (scoreRemainingNum < 2) {
       scoreRemainingNum++;
-      scoreCorrectEl.textContent = "CORRECT: " + scoreCorrectNum;
-      scoreIncorrectEl.textContent = "INCORRECT: " + scoreIncorrectNum;
-      scoreRemainingEl.textContent = "QUESTION: " + scoreRemainingNum + " / 10";
+      scoreCorrectEl.textContent = scoreCorrectNum;
+      scoreIncorrectEl.textContent = scoreIncorrectNum;
+      scoreRemainingEl.textContent = scoreRemainingNum;
   } else {
-    scoreCorrectEl.textContent = "CORRECT: " + scoreCorrectNum;
-    scoreIncorrectEl.textContent = "INCORRECT: " + scoreIncorrectNum;
-    scoreRemainingEl.textContent = "QUESTION: " + scoreRemainingNum + " / 10";
+    scoreCorrectEl.textContent = scoreCorrectNum;
+    scoreIncorrectEl.textContent = scoreIncorrectNum;
+    scoreRemainingEl.textContent = scoreRemainingNum;
     gameOver = true;
   }
 }
@@ -135,7 +135,8 @@ nextBtn = document.querySelector("#correct-next-btn"),
 tryAgainBtn = document.querySelector("#try-again"),
 answerBtn = document.querySelector("#answer-next-btn"),
 guessesLeft = document.querySelector("#guesses-left"),
-answerGiven = document.querySelector("#answer-given");
+answerGiven = document.querySelector("#answer-given"),
+newGameBtn = document.querySelector("#play-again-btn");
 
 // NO ANSWER
 const 
@@ -164,6 +165,10 @@ answerBtn.addEventListener("click", function() {
 
 noAnswerBtn.addEventListener("click", function() {
   modalNoAnswer.classList.remove("modal-visible");
+});
+
+newGameBtn.addEventListener("click", function() {
+  location.reload();
 });
 
 // initialize the game
