@@ -101,7 +101,7 @@ scoreRemainingEl.textContent = scoreRemainingNum;
 
 // updates the question counter
 function updateStats() {
-    if (scoreRemainingNum < 2) {
+    if (scoreRemainingNum < 10) {
       scoreRemainingNum++;
       scoreCorrectEl.textContent = scoreCorrectNum;
       scoreIncorrectEl.textContent = scoreIncorrectNum;
