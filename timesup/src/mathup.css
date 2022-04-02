@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 :root {
-  --clr-primary: rgb(118, 169, 219);
+  --clr-primary: rgb(155, 196, 237);
   --clr-secondary: rgb(193, 211, 230);
   --clr-btn: rgb(0, 120, 249);
 }
@@ -10,7 +12,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bolder;
 }
 
 h1 {
@@ -44,6 +47,10 @@ h2 {
   padding-bottom: 1rem;
 }
 
+.game-title {
+  padding: 10px 10px 0 10px;
+}
+
 .game-container {
   display: flex;
   flex-flow: column nowrap;
@@ -66,12 +73,11 @@ h2 {
   height: 6rem;
   border-radius: 1rem;
   border: 0.25rem solid var(--clr-btn);
-  padding-bottom: 4px;
   background-color: var(--clr-secondary);
 }
 
 .num-block {
-  width: 4.5rem;
+  width: 5rem;
   border: none;
   background-color: rgba(0, 0, 0, 0);
   font-size: 4rem;
@@ -79,6 +85,10 @@ h2 {
   text-align: center;
   color: #000;
   margin: 0;
+}
+
+.num1, .num2 {
+  color: #000;
 }
 
 .operator {
@@ -115,24 +125,24 @@ h2 {
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  color: #000;
+  color: var(--clr-btn);
   border-radius: 1rem;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   font-size: 4.5rem;
-  color: #000;
+  color: var(--clr-btn);
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-size: 4.5rem;
-  color: #000;
+  color: var(--clr-btn);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
   font-size: 4.5rem;
-  color: #000;
+  color: var(--clr-btn);
 }
 
 .numbers-container {
