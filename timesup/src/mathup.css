@@ -28,6 +28,11 @@ h2 {
   color: #FFF;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .container {
   display: flex;
   flex-flow: column nowrap;
