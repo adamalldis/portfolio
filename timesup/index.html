@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Up! Daily Quick Practice</title>
+  <link rel="stylesheet" href="src/mathup.css">
+  <script src="https://kit.fontawesome.com/4cc9bcca95.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="math-title">
+      <h1>TIMES UP!</h1>
+      <h2>Times Tables Practice</h2>
+    </header>
+
+    <section class="game-container">
+      <div class="question-container">
+        <input class="num-block num1" readonly>
+        <div class="operator">x</div>
+        <input class="num-block num2" readonly>
+    </div>
+    <div class="answer-container">
+      <input type="number" class="answer" placeholder="?" />
+    </div>
+    <div class="numbers-container">
+      <div class="button" id="button1">1</div>
+      <div class="button" id="button2">2</div>
+      <div class="button" id="button3">3</div>
+      <div class="button" id="button4">4</div>
+      <div class="button" id="button5">5</div>
+      <div class="button" id="button6">6</div>
+      <div class="button" id="button7">7</div>
+      <div class="button" id="button8">8</div>
+      <div class="button" id="button9">9</div>
+      <div class="button" id="button0">0</div>
+      <div class="enter-button" id="button-enter">ENTER</div>
+      <div class="delete-button button" id="button-delete"><i class="fa-solid fa-delete-left"></i></div>
+    </div>
+    </section>
+
+    <section class="score">
+      <div class="score-text">CORRECT: 
+        <span id="score-correct" class="score-info">0</span>
+      </div>
+      <div class="score-text">INCORRECT: 
+        <span id="score-incorrect" class="score-info">0</span>
+      </div>
+      <div class="score-text">QUESTION: 
+        <span id="score-remaining" class="score-info">0</span> / 10
+      </div>
+    </section>
+
+<!-- modal sections - hidden by default -->
+
+    <section class="modal-container" id="modal-correct">
+      <div class="modal-correct">
+        <p class="modal-text-small">THAT'S</p>
+        <p class="modal-text-large">CORRECT</p>
+        <button class="btn" id="correct-next-btn">NEXT</button>
+      </div>
+    </section>
+
+    <section class="modal-container" id="modal-incorrect">
+      <div class="modal-incorrect">
+        <p class="modal-text-small">SORRY, THAT'S</p>
+        <p class="modal-text-large">INCORRECT</p>
+        <h3>You have <span id="guesses-left"></span> </h3>
+        <button class="btn" id="try-again">TRY<br>AGAIN</button>
+      </div>
+    </section>
+
+    <section class="modal-container" id="modal-answer-given">
+      <div class="modal-incorrect">
+        <p class="modal-text-small">SORRY, THAT'S</p>
+        <p class="modal-text-large">INCORRECT</p>
+        <h3 id="answer-given"></h3>
+        <button class="btn" id="answer-next-btn">NEXT</button>
+      </div>
+    </section>
+
+    <section class="modal-container" id="modal-game-over">
+      <div class="modal-game-over">
+        <p class="accolation modal-text-large">PERFECT</p><br>
+        <p class="modal-text-small">You got<br><span class="correct-answers"></span> out of 10 <br>correct.</p>
+        <button class="play-again-btn" id="play-again-btn">PLAY AGAIN</button>
+      </div>
+    </section>
+
+    <section class="modal-container" id="modal-no-answer">
+      <div class="modal-no-answer">
+        <p class="modal-text-small">You must<br>enter an answer<br>first</p>
+        <button class="btn-x" id="no-answer-btn">X</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="src/mathup.js"></script>
+</body>
+</html>
