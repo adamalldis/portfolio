@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Up! Daily Quick Practice</title>
-  <link rel="stylesheet" href="src/mathup.css">
-  <script src="https://kit.fontawesome.com/4cc9bcca95.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alldis Portfolio</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://kit.fontawesome.com/4cc9bcca95.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container">
 
-  <div class="container">
+        <header class="navbar">
+            <div class="logo-box" id="nav-home">a</div>
+            <div>
+                <ul class="menu-list">
+                    <li id="nav-about-me">about me</li>
+                    <li id="nav-skills">skills</li>
+                    <li id="nav-projects">projects</li>
+                </ul>
+            </div>
+        </header>
 
-    <header class="math-title">
-      <div class="game-title">
-      <img src="images/logo_timesup.png" alt="TIMES UP Math Game">
-      </div>
-    </header>
+        <section class="name-grid" id="home">
+            <div class="my-name-container">
+                <div class="my-name">adam</div>
+                <div class="bullet-red"></div>
+                <div class="my-name">alldis</div>
+            </div>
+            <div class="my-title">graphic designer / front end developer</div>
+        </section>
 
-    <section class="game-container">
-      <div class="question-container">
-        <input class="num-block num1" readonly>
-        <div class="operator">x</div>
-        <input class="num-block num2" readonly>
+        <section id="about-me" class="about-container">
+            <div>
+                <img src="images/profile_pic_gs.jpg" class="profile-pic" alt="Profile Picture">
+            </div>
+            <div>
+                <div class="about-title">about me</div>
+                <div class="about-text">
+                    Hello, I'm Adam.<br />
+                    I've been a graphic designer for 20+ years and have since branched out into the realm of web development.<br />
+                    I have a passion for clean, direct design which I incorporate in my work.
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-container">
+            <div class="skills-bracket">{</div>
+            <div>
+                <div class="skills-title">skills</div>
+                <div class="skills-text">HTML5</div>
+                <div class="skills-text">CSS 3</div>
+                <div class="skills-text">JavaScript</div>
+                <div class="skills-text">Adobe InDesign</div>
+                <div class="skills-text">Adobe Photoshop</div>
+                <div class="skills-text">Adobe Illustrator</div>
+                <div class="skills-text">Acrobat Pro</div>
+                <div class="skills-text">Microsoft Office</div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-container">
+            <div class="projects-title pro-heading">projects</div>
+                <!-- <div class="cards-container"> -->
+                    <div class="project-card project1">
+                        API SITE
+                    </div>
+                    <div class="project-card project2">
+                        BROCHURE
+                    </div>
+                    <div class="project-card project3">
+                        E-COMMERCE
+                    </div>
+                    <div class="project-card project4">
+                        GAME
+                    </div>
+                    <div class="project-card project5">
+                        GRAPHIC DESIGN
+                    </div>
+                <!-- </div> -->
+        </section>
+
+        <footer id="contact" class="footer-container">
+            <div>
+                <a href="http://twitter.com/alldis" target="_blank">
+                    <i class="fa-brands fa-twitter-square social"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/adamalldis" target="_blank">
+                    <i class="fa-brands fa-github-square social"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://ca.linkedin.com/in/adam-alldis-13749a231" target="_blank">
+                <i class="fa-brands fa-linkedin social"></i>
+                </a>
+            </div>
+            <div class="footer-info"><a href="mailto:alldis@me.com">alldis@me.com</a></div>
+        </footer>
+
     </div>
-    <div class="answer-container">
-      <input type="number" class="answer" placeholder="?" />
-    </div>
-    <div class="numbers-container">
-      <div class="button" id="button1">1</div>
-      <div class="button" id="button2">2</div>
-      <div class="button" id="button3">3</div>
-      <div class="button" id="button4">4</div>
-      <div class="button" id="button5">5</div>
-      <div class="button" id="button6">6</div>
-      <div class="button" id="button7">7</div>
-      <div class="button" id="button8">8</div>
-      <div class="button" id="button9">9</div>
-      <div class="button" id="button0">0</div>
-      <div class="enter-button" id="button-enter">ENTER</div>
-      <div class="delete-button button" id="button-delete"><i class="fa-solid fa-delete-left"></i></div>
-    </div>
-    </section>
-
-    <section class="score">
-      <div class="score-text">CORRECT: 
-        <span id="score-correct" class="score-info">0</span>
-      </div>
-      <div class="score-text">INCORRECT: 
-        <span id="score-incorrect" class="score-info">0</span>
-      </div>
-      <div class="score-text">QUESTION: 
-        <span id="score-remaining" class="score-info">0</span> / 10
-      </div>
-    </section>
-
-<!-- modal sections - hidden by default -->
-
-    <section class="modal-container" id="modal-correct">
-      <div class="modal-correct">
-        <p class="modal-text-small">THAT'S</p>
-        <p class="modal-text-large">CORRECT</p>
-        <button class="btn" id="correct-next-btn">NEXT</button>
-      </div>
-    </section>
-
-    <section class="modal-container" id="modal-incorrect">
-      <div class="modal-incorrect">
-        <p class="modal-text-small">SORRY, THAT'S</p>
-        <p class="modal-text-large">INCORRECT</p>
-        <h3>You have <span id="guesses-left"></span> </h3>
-        <button class="btn" id="try-again">TRY<br>AGAIN</button>
-      </div>
-    </section>
-
-    <section class="modal-container" id="modal-answer-given">
-      <div class="modal-incorrect">
-        <p class="modal-text-small">SORRY, THAT'S</p>
-        <p class="modal-text-large">INCORRECT</p>
-        <h3 id="answer-given"></h3>
-        <button class="btn" id="answer-next-btn">NEXT</button>
-      </div>
-    </section>
-
-    <section class="modal-container" id="modal-game-over">
-      <div class="modal-game-over">
-        <p class="accolation modal-text-large">PERFECT</p><br>
-        <p class="modal-text-small">You got<br><span class="correct-answers"></span> out of 10 <br>correct.</p>
-        <button class="play-again-btn" id="play-again-btn">PLAY AGAIN</button>
-      </div>
-    </section>
-
-    <section class="modal-container" id="modal-no-answer">
-      <div class="modal-no-answer">
-        <p class="modal-text-small">You must<br>enter an answer<br>first</p>
-        <button class="btn-x" id="no-answer-btn">X</button>
-      </div>
-    </section>
-
-  </div>
-
-  <script src="src/mathup.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
