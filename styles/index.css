@@ -233,15 +233,103 @@ h3 {
 
 /* ================================== PROJECTS SECTION =========== */
 
-.projects-container {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFF;
-    color: var(--color-dark);
+#projects {
     height: 100vh;
 }
+
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: red;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.card-thumb-avo {    
+    width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
+    border: solid 2px #000;
+    background-color: #FFF;
+    background-image: url("../images/avoservices.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.card-thumb-timesup {    
+    width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
+    border: solid 2px #000;
+    background-color: #FFF;
+    background-image: url("../images/timesup.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.card-desc {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.card-btn {
+    width: 8rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: var(--color-main);
+    color: #FFF;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.card-btn:hover {
+    width: 8rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: rgb(255, 103, 43);
+    color: #FFF;
+    border: none;
+    border-radius: 0.25rem;
+    transition: 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.project-card {
+    background-color: aquamarine;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10rem;
+    height: 20rem;
+    margin: 10px;
+    padding: 10px;
+}
+
+.projects-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--color-main);
+    line-height: 3rem;
+    padding-bottom: 40px;
+    background-color: #777;
+}
+
+.projects-text {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--color-dark);
+    line-height: 3rem;
+    padding-bottom: 5px;
+}
+
 
 /* ================================== FOOTER SECTION =========== */
 
@@ -401,3 +489,34 @@ h3 {
         padding-bottom: 50px;
     }
 }
+
+    /* .projects-container {
+        display: flex;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: 0.25fr repeat(3, 1fr);
+        grid-template-areas: 
+            "pro-heading pro-heading"
+            "project1 project2"
+            "project3 project4"
+            "project5 project5";
+        align-items: center;
+        background-color: #FFF;
+        color: var(--color-dark);
+        height: auto;
+    } */
+
+    .pro-heading {
+        grid-area: pro-heading;
+        background-color: #FFF;
+        margin: 0;
+        margin-top: 5rem;
+        margin-left: 1rem;
+        font-size: 3rem;
+        text-align: center;
+    
+    }
+    .project1 {grid-area: project1;}
+    .project2 {grid-area: project2;}
+    .project3 {grid-area: project3;}
+    .project4 {grid-area: project4;}
+    .project5 {grid-area: project5;}
