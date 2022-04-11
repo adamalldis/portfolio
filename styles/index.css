@@ -234,43 +234,48 @@ h3 {
 /* ================================== PROJECTS SECTION =========== */
 
 #projects {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .projects-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: red;
 }
 
 .card-title {
     font-size: 1.25rem;
     font-weight: 700;
     text-align: center;
+    line-height: 1.25rem;
 }
 
-.card-thumb-avo {    
+.card-thumb {    
     width: 9rem;
     height: 9rem;
     border-radius: 4.5rem;
-    border: solid 2px #000;
-    background-color: #FFF;
+    border: solid 3px var(--color-main);
+    background-color: #AAA;
+    background-position: center;
+    background-size: cover;
+}
+
+.thumb-avo {    
     background-image: url("../images/avoservices.jpg");
-    background-position: center;
-    background-size: cover;
 }
 
-.card-thumb-timesup {    
-    width: 9rem;
-    height: 9rem;
-    border-radius: 4.5rem;
-    border: solid 2px #000;
-    background-color: #FFF;
+.thumb-timesup {    
     background-image: url("../images/timesup.jpg");
-    background-position: center;
-    background-size: cover;
 }
+/* 
+.thumb-ecommerce {    
+    background-image: url("../images/);
+}
+
+.card-thumb-api {    
+    background-image: url("../images/");
+}
+*/
 
 .card-desc {
     font-size: 0.75rem;
@@ -302,7 +307,7 @@ h3 {
 }
 
 .project-card {
-    background-color: aquamarine;
+    border-bottom: 2px solid #000;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -362,6 +367,10 @@ h3 {
     color: var(--color-main);
     padding: 0 5px;
     cursor: pointer;
+}
+
+.footer-buffer {
+    height: 3rem;
 }
 
 /* ================================== MEDIA QUERY =========== */
@@ -489,21 +498,6 @@ h3 {
         padding-bottom: 50px;
     }
 }
-
-    /* .projects-container {
-        display: flex;
-        grid-template-columns: repeat (2, 1fr);
-        grid-template-rows: 0.25fr repeat(3, 1fr);
-        grid-template-areas: 
-            "pro-heading pro-heading"
-            "project1 project2"
-            "project3 project4"
-            "project5 project5";
-        align-items: center;
-        background-color: #FFF;
-        color: var(--color-dark);
-        height: auto;
-    } */
 
     .pro-heading {
         grid-area: pro-heading;
