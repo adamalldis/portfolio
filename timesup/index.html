@@ -20,10 +20,26 @@
 
     <section class="game-container">
       <div class="question-container">
-        <input class="num-block num1" readonly>
+        <input class="num-block-left num1" readonly>
         <div class="operator">x</div>
-        <input class="num-block num2" readonly>
+        <input class="num-block-right num2" readonly>
     </div>
+
+<!-- COUNTDOWN TIMER -->
+    <div class="container-countdown">
+      <div class="notch notch-blue left-round"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue"></div>
+      <div class="notch notch-blue right-round"></div>
+    </div>
+<!-- COUNTDOWN TIMER -->
+
     <div class="answer-container">
       <input type="number" class="answer" placeholder="?" />
     </div>
@@ -71,6 +87,14 @@
         <p class="modal-text-large">INCORRECT</p>
         <h3>You have <span id="guesses-left"></span> </h3>
         <button class="btn" id="try-again">TRY<br>AGAIN</button>
+      </div>
+    </section>
+
+    <section class="modal-container" id="modal-times-up">
+      <div class="modal-times-up">
+        <p class="modal-text-small">SORRY</p>
+        <p class="modal-text-large">TIME'S UP</p>
+        <button class="btn" id="timesup-next-btn">NEXT</button>
       </div>
     </section>
 

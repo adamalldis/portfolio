@@ -32,9 +32,44 @@ button7.addEventListener("click", function() { answerEl.value += 7; });
 button8.addEventListener("click", function() { answerEl.value += 8; });
 button9.addEventListener("click", function() { answerEl.value += 9; });
 
+// set the countdown timer to 10 ticks
+let count = 10;
+
+// set the guess limit
+let guesses = 2;
+
+// countdown timer
+const countdownEl = document.querySelector(".container-countdown");
+const notchEl = document.querySelectorAll(".notch");
+
+function countdown() {
+  if (count > 3) {
+    countdownEl.removeChild(countdownEl.lastElementChild);
+    count--;
+  } else if (count > 0) {
+    notchEl.forEach(item => { item.classList.add("notch-red") });
+    countdownEl.removeChild(countdownEl.lastElementChild);
+    count--;
+  } else {
+    modalTimesUp.classList.add("modal-visible");
+  }
+}
+
+// this keeps the setInterval from starting automatically and allows it to be reactivated if ever cleared
+let timer = null;
+function intervalManager(flag, countdown, time) {  // flag is boolean, if true setInterval begins, if false it clears
+   if(flag)
+     timer =  setInterval(countdown, time);
+   else
+     clearInterval(timer);
+}
+
 // get a random numbers from 0-9 for both parts of the equation
 function setNumbers() {
+  intervalManager(true, countdown, 1000);
+  resetTimer();
   if (gameOver === true) {
+    intervalManager(false);
     modalGameOver.classList.add("modal-visible");
     gameOverEl.textContent = scoreCorrectNum;
     if (scoreCorrectNum === 10) {
@@ -55,11 +90,9 @@ function setNumbers() {
   }
 }
 
-// set the guess limit
-let guesses = 2;
-
 // input answer and see if its correct
 enterEl.addEventListener("click", function() {
+  intervalManager(false);
   if (answerEl.value === "") {
     modalNoAnswer.classList.add("modal-visible");
   } else {
@@ -129,6 +162,7 @@ deleteEl.addEventListener("click", function() {
 const 
 modalCorrect = document.querySelector("#modal-correct"),
 modalIncorrect = document.querySelector("#modal-incorrect"),
+modalTimesUp = document.querySelector("#modal-times-up"),
 modalAnswerGiven = document.querySelector("#modal-answer-given"),
 modalGameOver = document.querySelector("#modal-game-over"),
 nextBtn = document.querySelector("#correct-next-btn"),
@@ -136,7 +170,8 @@ tryAgainBtn = document.querySelector("#try-again"),
 answerBtn = document.querySelector("#answer-next-btn"),
 guessesLeft = document.querySelector("#guesses-left"),
 answerGiven = document.querySelector("#answer-given"),
-newGameBtn = document.querySelector("#play-again-btn");
+newGameBtn = document.querySelector("#play-again-btn"),
+timesUpBtn = document.querySelector("#timesup-next-btn");
 
 // NO ANSWER
 const 
@@ -147,6 +182,15 @@ noAnswerBtn = document.querySelector("#no-answer-btn");
 nextBtn.addEventListener("click", function() {
   modalCorrect.classList.remove("modal-visible");
   scoreCorrectNum++;
+  guesses = 2;
+  updateStats();
+  setNumbers();
+});
+
+timesUpBtn.addEventListener("click", function() {
+  intervalManager(false);
+  modalTimesUp.classList.remove("modal-visible");
+  scoreIncorrectNum++;
   updateStats();
   setNumbers();
 });
@@ -154,6 +198,8 @@ nextBtn.addEventListener("click", function() {
 tryAgainBtn.addEventListener("click", function() {
   modalIncorrect.classList.remove("modal-visible");
   guesses--;
+  intervalManager(true, countdown, 1000);
+  resetTimer();
 });
 
 answerBtn.addEventListener("click", function() {
@@ -165,6 +211,8 @@ answerBtn.addEventListener("click", function() {
 
 noAnswerBtn.addEventListener("click", function() {
   modalNoAnswer.classList.remove("modal-visible");
+  intervalManager(true, countdown, 1000);
+  resetTimer();
 });
 
 newGameBtn.addEventListener("click", function() {
@@ -177,3 +225,21 @@ setNumbers();
 // THIS IS HOW YOU ADD AND REMOVE A CLASS FROM AN HTML ELEMENT (modal is the ID)
 // modal.classList.add("modal-visible");
 // modal.classList.remove("modal-visible");
+
+// reset the countdown timer and fill it back up
+function resetTimer() {
+  count = 10;
+  const countdownContainer = document.querySelector(".container-countdown");
+  countdownContainer.innerHTML = `
+    <div class="notch notch-blue left-round"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue"></div>
+    <div class="notch notch-blue right-round"></div>
+  `
+}
