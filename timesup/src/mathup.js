@@ -40,9 +40,10 @@ let guesses = 2;
 
 // countdown timer
 const countdownEl = document.querySelector(".container-countdown");
-const notchEl = document.querySelectorAll(".notch");
+
 
 function countdown() {
+  const notchEl = document.querySelectorAll(".notch");
   if (count > 3) {
     countdownEl.removeChild(countdownEl.lastElementChild);
     count--;
