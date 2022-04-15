@@ -109,7 +109,7 @@ enterEl.addEventListener("click", function() {
       answerEl.value = null;
     } else {
       modalAnswerGiven.classList.add("modal-visible");
-      answerGiven.textContent = "The answer was " + (Number(num1El.value) + Number(num2El.value));
+      answerGiven.textContent = "The answer was " + (Number(num1El.value) * Number(num2El.value));
       guesses = 2;
   }
   }

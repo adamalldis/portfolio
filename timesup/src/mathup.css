@@ -98,7 +98,7 @@ img {
 }
 
 /* ========================================
-             TIMER COUNTDOWN
+             EQUATIONS SECTION
 =========================================*/
 
 .game-container {
@@ -450,8 +450,125 @@ img {
                                                               MEDIA QUERIES
    =================================================================================== */
 
-/* @media only screen and (min-width: 0px)  { 
-
-
+@media only screen and (min-width: 760px)  { 
   
-} */
+/* ========================================
+             TIMER COUNTDOWN
+=========================================*/
+
+.container-countdown {
+  padding: 0.7rem;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.notch-blue {
+  height: 2rem;
+}
+
+.notch-red {
+  height: 2rem;
+}
+
+.left-round {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.right-round {
+  border-radius: 0 1rem 1rem 0;
+}
+
+/* ========================================
+             EQUATIONS SECTION
+=========================================*/
+
+.question-container {
+  height: 10rem;
+}
+
+.num-block-left {
+  width: 16rem;
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.num-block-right {
+  width: 16rem;
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.operator {
+  width: 12rem;
+  font-size: 8rem;
+  font-weight: 500;
+}
+
+.answer-container {
+  height: 10rem;
+  font-size: 12rem;
+  font-weight: 500;
+}
+
+.answer {
+  font-size: 8rem;
+  font-weight: 500;
+  padding-top: 0.5rem;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 8rem;
+  color: var(--clr-btn);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 8rem;
+  color: var(--clr-btn);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-size: 8rem;
+  color: var(--clr-btn);
+}
+
+.button {
+  width: 8rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: 3px solid #FFF;
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0.5rem 0 ;
+}
+
+.enter-button {
+  width: 24rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: 3px solid #FFF;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.delete-button {
+  width: 17.5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: 3px solid #FFF;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.25rem;
+}
+
+.score-text {
+  margin: 0.5rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+}
