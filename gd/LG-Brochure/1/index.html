@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=../">
+    </noscript>
+    <script type="text/javascript">
+        if ((new RegExp('\/javascript:|{|}|;|%7B|%7D|%3B\/', 'i').test(window.location.href))) {
+            throw new Error('Code injection detected');
+        }
+        var href = window.location.href.split("#");
+        var index = href[0].indexOf('index.html') !== -1 ? 'index.html' : '';
+        var query = href[0].split('?')[1];
+        query = query ? ('?' + query) : '';
+        var hash = href[1] ? ('#' + href[1]) : '';
+        window.location.href = "../" + index + query + hash;
+    </script>
+    <link rel="canonical" href="../" />
+    
+</head>
+<body>
+</body>
+</html>
