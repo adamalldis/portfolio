@@ -1,0 +1,16 @@
+/*!
+ * modernizr v3.0.0-alpha.3
+ * Build http://v3.modernizr.com/download/#-domprefixes-prefixed-prefixedcss-teststyles-dontmin
+ *
+ * Copyright (c)
+ *  Faruk Ates
+ *  Paul Irish
+ *  Alex Sexton
+ *  Ryan Seddon
+ *  Alexander Farkas
+ *  Patrick Kettner
+ *  Stu Cox
+ *  Richard Herrera
+
+ * MIT License
+ */
