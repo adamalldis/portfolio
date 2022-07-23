@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/index.css">
+  <title>BMI Calculator</title>
+</head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <div class="age">
+      <input type="number" id="ageEl" class="input" placeholder="Age">
+    </div>
+    <div class="sub-container">
+      <div class="weight">
+        <input type="number" id="weightEl" class="input" placeholder="Weight">
+      </div>
+      <div class="weight-unit">
+        <select name="weightUnit" id="weightUnitEl" class="input">
+          <option value="lbs">lbs</option>
+          <option value="kg">kg</option>
+        </select>
+      </div>
+    </div>
+    <div class="sub-container">
+      <div class="height">
+        <input type="number" id="heightEl" class="input" placeholder="Height">
+      </div>
+      <div class="height-unit">
+        <select name="heightUnit" id="heightUnitEl" class="input">
+          <option value="in">in</option>
+          <option value="cm">cm</option>
+        </select>
+      </div>
+    </div>
+    <button id="btnCalc" class="btnCalc btn">CALCULATE</button>
+    <div id="BMI">
+      <input type="text" id="bmiEl" placeholder="BMI" class="input" readonly>
+      <input type="text" id="bmiCatEl" placeholder="Category" class="input category" readonly>
+    </div>
+  </div>
+
+
+  <script src="src/index.js"></script>
+</body>
+</html>
